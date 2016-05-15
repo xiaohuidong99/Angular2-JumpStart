@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { bootstrap } from 'angular2/platform/browser';
 import { bind } from 'angular2/core';
 import { FORM_PROVIDERS } from 'angular2/common';
@@ -11,6 +12,13 @@ bootstrap(AppComponent, [
     HTTP_PROVIDERS
     // bind(LocationStrategy).toClass(HashLocationStrategy)
 ]).then(
+=======
+import { bootstrap } from '@angular/platform-browser-dynamic';
+
+import { AppComponent } from './app.component';
+
+bootstrap(AppComponent).then(
+>>>>>>> master
     success => console.log('AppComponent bootstrapped!'),
     error => console.log(error)
 );

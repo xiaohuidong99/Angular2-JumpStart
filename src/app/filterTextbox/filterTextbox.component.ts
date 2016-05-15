@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter } from 'angular2/core';
-import { FORM_DIRECTIVES } from 'angular2/common';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { FORM_DIRECTIVES } from '@angular/common';
 
 @Component({
   selector: 'filter-textbox',
@@ -22,7 +22,7 @@ export class FilterTextboxComponent {
     changed: EventEmitter<string> = new EventEmitter();
 
     filterChanged(event: any) {
-        event.preventDefault();
-        this.changed.emit(this.model.filter); //Raise changed event
+      event.preventDefault();
+      this.changed.emit(this.model.filter); //Raise changed event
     }
 }
