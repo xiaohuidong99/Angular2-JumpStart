@@ -1,3 +1,4 @@
+
 <div class="customers view indent">
     <div class="container">
         <header>
@@ -29,11 +30,11 @@
         </div>
         <div class="container">
             <div class="row card-container" [hidden]="listDisplayModeEnabled">
-                <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="#customer of filteredCustomers">
+                <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let customer of filteredCustomers">
                     <div class="card">
                         <!--<button class="btn close card-close" title="Delete Customer" (click)="deleteCustomer(customer.id)">&times;</button>-->
                         <div class="card-header">
-                            <a [routerLink]="['Orders',{id:customer.id}]" class="white">{{customer.firstName | capitalize }} {{ customer.lastName | capitalize }} 
+                            <a [routerLink]="['Orders',{id:customer.id}]" class="white">{{customer.firstName | capitalize }} {{ customer.lastName | capitalize }}
                                 <i class="icon-edit icon-white editIcon"></i></a>
                         </div>
                         <div class="card-body">
@@ -44,7 +45,7 @@
                                     </a>
                                 </div>
                                 <div class="pull-left card-body-right">
-                                    <div class="card-body-content">{{customer.city | trim }}, {{customer.state.name}}</div>
+                                    <div class="card-body-content">{{customer.city | trim }}, {{customer.State.name}}</div>
                                 </div>
                             </div>
                         </div>
@@ -61,6 +62,7 @@
                             <thead>
                                 <tr>
                                     <th>&nbsp;</th>
+
                                     <th sort-by="firstName" (sorted)="sort($event)">First Name</th>
                                     <th sort-by="lastName" (sorted)="sort($event)">Last Name</th>
                                     <th sort-by="address" (sorted)="sort($event)">Address</th>
@@ -71,15 +73,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="#customer of filteredCustomers">
-                                    <td><img src="images/{{ customer.gender | lowercase }}.png" 
+                                <tr *ngFor="let customer of filteredCustomers">
+
+                                    <td>
+
+                                      <img src="images/{{ customer.gender | lowercase }}.png"
                                              class="card-image" alt="Customer Image" /></td>
                                     <td><a [routerLink]="['Orders',{id:customer.id}]">{{ customer.firstName | capitalize }}</a></td>
                                     <td>{{ customer.lastName | capitalize }}</td>
                                     <td>{{ customer.address }}</td>
                                     <td>{{ customer.city | trim }}</td>
-                                    <td>{{ customer.state.name }}</td>
+                                    <td>{{ customer.State.name }}</td>
                                     <td>{{ customer.orderTotal | currency:'USD':true }}</td>
+
                                 </tr>
                                 <tr [hidden]="filteredCustomers.length">
                                     <td>&nbsp;</td>

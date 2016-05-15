@@ -8,12 +8,13 @@ import { FilterTextboxComponent } from './filterTextbox.component';
 import { SortByDirective } from '../shared/directives/sortby.directive';
 import { CapitalizePipe } from '../shared/pipes/capitalize.pipe';
 import { TrimPipe } from '../shared/pipes/trim.pipe';
+import {Alert} from '../../../components/alert.component';
 
-@Component({ 
-  selector: 'customers', 
+@Component({
+  selector: 'customers',
   providers: [DataService],
   templateUrl: 'app/customers/customers.component.html',
-  directives: [CORE_DIRECTIVES, RouterLink, FilterTextboxComponent, SortByDirective],
+  directives: [CORE_DIRECTIVES, RouterLink, FilterTextboxComponent, SortByDirective,Alert],
   pipes: [CapitalizePipe, TrimPipe]
 })
 export class CustomersComponent {
@@ -26,7 +27,7 @@ export class CustomersComponent {
   sorter: Sorter;
 
   constructor(private dataService: DataService) { }
-  
+
   ngOnInit() {
     this.title = 'Customers';
     this.filterText = 'Filter Customers:';
@@ -73,7 +74,7 @@ export class CustomersComponent {
   sort(prop: string) {
       //Check for complex type such as 'state.name'
       if (prop && prop.indexOf('.')) {
-        
+
       }
       this.sorter.sort(this.filteredCustomers, prop);
   }

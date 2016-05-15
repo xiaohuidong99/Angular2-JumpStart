@@ -10,9 +10,38 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
   },
+  "filesGlob": [
+    "**/*.ts",
+    "**/*.tsx",
+    "!node_modules/**"
+  ],
   "exclude": [
     "node_modules",
     "typings/main",
     "typings/main.d.ts"
-  ]
+  ],
+  "files": [
+    "components/alert.component.ts",
+    "src/app/app.component.ts",
+    "src/app/card/card.component.ts",
+    "src/app/card/card.title.component.ts",
+    "src/app/customers/customers.component.ts",
+    "src/app/customers/filterTextbox.component.ts",
+    "src/app/main.ts",
+    "src/app/orders/orders.component.ts",
+    "src/app/shared/directives/sortby.directive.ts",
+    "src/app/shared/pipes/capitalize.pipe.ts",
+    "src/app/shared/pipes/trim.pipe.ts",
+    "src/app/shared/pubSubService.ts",
+    "src/app/shared/services/data.service.ts",
+    "src/app/shared/sorter.ts",
+    "src/app/test/edit/edit.test.component.ts",
+    "src/app/test/test.component.ts",
+    "typings/browser.d.ts",
+    "typings/browser/ambient/es6-shim/es6-shim.d.ts",
+    "typings/browser/ambient/es6-shim/index.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
