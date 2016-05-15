@@ -3,6 +3,21 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 //import { Observable } from 'rxjs/Observable';
 
 import { DataService } from '../shared/services/data.service';
+<<<<<<< HEAD
+import { Sorter } from '../shared/sorter';
+import { FilterTextboxComponent } from './filterTextbox.component';
+import { SortByDirective } from '../shared/directives/sortby.directive';
+import { CapitalizePipe } from '../shared/pipes/capitalize.pipe';
+import { TrimPipe } from '../shared/pipes/trim.pipe';
+import {Alert} from '../../../components/alert.component';
+
+@Component({
+  selector: 'customers',
+  providers: [DataService],
+  templateUrl: 'app/customers/customers.component.html',
+  directives: [CORE_DIRECTIVES, RouterLink, FilterTextboxComponent, SortByDirective,Alert],
+  pipes: [CapitalizePipe, TrimPipe]
+=======
 import { FilterTextboxComponent } from '../filterTextbox/filterTextbox.component';
 import { CustomersCardComponent } from './customersCard.component';
 import { CustomersGridComponent } from './customersGrid.component'
@@ -14,6 +29,7 @@ import { ICustomer, IOrder } from '../shared/interfaces';
   templateUrl: 'customers.component.html',
   directives: [ROUTER_DIRECTIVES, FilterTextboxComponent, 
                CustomersCardComponent, CustomersGridComponent]
+>>>>>>> master
 })
 export class CustomersComponent implements OnInit {
 
@@ -25,7 +41,7 @@ export class CustomersComponent implements OnInit {
   displayModeEnum = DisplayModeEnum;
 
   constructor(private dataService: DataService) { }
-  
+
   ngOnInit() {
     this.title = 'Customers';
     this.filterText = 'Filter Customers:';
@@ -64,7 +80,21 @@ export class CustomersComponent implements OnInit {
     }
   }
 
+<<<<<<< HEAD
+  deleteCustomer(id: number) {
+
+  }
+
+  sort(prop: string) {
+      //Check for complex type such as 'state.name'
+      if (prop && prop.indexOf('.')) {
+
+      }
+      this.sorter.sort(this.filteredCustomers, prop);
+  }
+=======
 }
+>>>>>>> master
 
 enum DisplayModeEnum {
   Card = 0,

@@ -1,15 +1,62 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 //Grab everything with import 'rxjs/Rx';
+<<<<<<< HEAD
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+=======
 import { Observable } from 'rxjs/Observable';
 import {Observer} from 'rxjs/Observer';
 import 'rxjs/add/operator/map'; 
+>>>>>>> master
 import 'rxjs/add/operator/catch';
 
 import { ICustomer, IOrder, IState } from '../interfaces';
 
 @Injectable()
 export class DataService {
+<<<<<<< HEAD
+
+  baseUrl: string = '/src';
+
+  constructor(private http: Http) { }
+
+  getCustomers() {
+    return this.http.get(
+      'http://localhost:3000/Users/getAll'
+      )
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+    // return this.http.get(
+    //   this.baseUrl + '/customers.json'
+    //   )
+    //   .map((res: Response) => res.json())
+    //   .catch(this.handleError);
+  }
+
+  getCustomerbyID(id:number) {
+    return this.http.get(
+      'http://localhost:3000/Users/getUser/' + id 
+      )
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+    // return this.http.get(
+    //   this.baseUrl + '/customers.json'
+    //   )
+    //   .map((res: Response) => res.json())
+    //   .catch(this.handleError);
+  }
+  getOrders() {
+    return this.http.get(this.baseUrl + '/orders.json')
+      .map((res: Response) => res.json())
+      .catch(this.handleError);
+  }
+
+  handleError(error: any) {
+    console.error(error);
+    return Observable.throw(error.json().error || 'Server error');
+  }
+=======
   
     _baseUrl: string = '';
     customers: ICustomer[];
@@ -115,5 +162,6 @@ export class DataService {
         console.error(error);
         return Observable.throw(error.json().error || 'Server error');
     }
+>>>>>>> master
 
 }

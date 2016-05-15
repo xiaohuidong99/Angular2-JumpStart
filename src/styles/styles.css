@@ -7,9 +7,22 @@ body {
     font-family: 'Open Sans'
 }
 
+.panel-body{
+    padding: 10px;
+}
+
+.panel-default > .panel-heading {
+  background-color: #2ECC71
+
+}
+.panel-default > .panel-heading > a{
+  color: white;
+
+}
+
 main {
     position: relative;
-    padding-top: 60px;
+    padding-top: 5px;
 }
 
 /* Ensure display:flex and others don't override a [hidden] */
@@ -179,7 +192,7 @@ footer {
 }
 
 .navbar .nav > li > a {
-    color: white;
+    /*color: white;*/
     font-weight:bold;
     -webkit-text-shadow: none;
     text-shadow: none;
@@ -243,6 +256,18 @@ filter-textbox {
     margin-top: 5px;
 }
 
+<<<<<<< HEAD
+.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid {
+  border-left: 5px solid #a94442; /* red */
+}
+.nginvalid {
+  border-left: 5px solid #a94442; /* red */
+}
+=======
 form {
 	width:50%;
 }
@@ -259,3 +284,4 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
+>>>>>>> master

@@ -8,6 +8,7 @@
 -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <base href="/">
     <title>Angular 2 TypeScript App</title>
@@ -15,6 +16,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Angular 2 JumpStart">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
+    <!-- <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'> -->
+    <link href="../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="styles/styles.css" rel="stylesheet" />
+    <!-- <script src="/node_modules/handsontable/dist/handsontable.full.min.css"></script>
+    <link rel="stylesheet" media="screen" href="/node_modules/handsontable/dist/handsontable.full.css"> -->
+
+
+=======
     <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css' />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
     <link href="styles/styles.css" rel="stylesheet" />
@@ -32,9 +43,11 @@
 		System.import('app').catch(function(err){ console.error(err); });
 	</script>
 	<!-- remove for bundle usage -->
+>>>>>>> master
 </head>
+
 <body>
-    <header class="navbar navbar-inner navbar-fixed-top">
+    <!-- <header class="navbar navbar-inner navbar-fixed-top">
         <nav class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -49,13 +62,14 @@
               </a>
             </div>
         </nav>
-    </header>
+    </header> -->
 
     <main class="container">
         <app-container>
             Loading...
         </app-container>
-        <br /><br />
+        <br />
+        <br />
     </main>
 
     <footer>
@@ -73,10 +87,35 @@
             </div>
         </div>
     </footer>
+<<<<<<< HEAD
+
+    <!-- IE required polyfills (order matters) -->
+    <script src="/node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="/node_modules/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="/node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="/node_modules/systemjs/dist/system.src.js"></script>
+    <script src="/node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="/node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="/node_modules/angular2/bundles/router.dev.js"></script>
+
+    <script>
+        System.config({
+            baseURL: '/node_modules',
+            defaultJSExtensions: true,
+            warnings: true
+        });
+
+        System.import('./app/main')
+            .then(null, console.error.bind(console));
+    </script>
+=======
     
 	<!-- add for bundle usage -->
 	<!-- <script src="dist/bundle.min.js"></script> -->
 	<!-- add for bundle usage -->
     
+>>>>>>> master
 </body>
+
 </html>

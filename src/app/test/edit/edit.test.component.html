@@ -1,0 +1,28 @@
+
+
+  <div class="container">
+    <div [ngClass]="{nginvalid: !loginForm.valid}">
+
+    Edit User
+    <form [ngFormModel]="loginForm" >
+       <label for="name" class="col-sm-1 text-right" >Name:</label>
+       <input id="name" class="col-sm-5" type="text" ngControl="name">
+
+       <label for="email" class="col-sm-1 text-right">Email:</label>
+       <input id="email" class="col-sm-5" type="email" ngControl="email">
+
+       <div ngControlGroup="matchingPassword">
+         <label for="password" class="col-sm-1 text-right">Password:</label>
+         <input id="password"  class="col-sm-5" type="password" ngControl="password">
+         <br>
+         <label for="confirmPassword" class="col-sm-1 text-right">Confirm Password:</label>
+         <input id="confirmPassword" class="col-sm-5" type="password" ngControl="confirmPassword">
+       </div>
+       <div *ngIf="!loginForm.controls.matchingPassword.valid"
+          class="ui error message">SKU is invalid</div>
+
+     </form>
+     <pre>Valid?: {{loginForm.valid}}</pre>
+     <pre>{{loginForm.value | json}}</pre>
+   </div>
+  </div>
